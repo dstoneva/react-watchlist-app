@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import ResultCard from "../ResultCard";
+import React, { useState, useEffect, useRef } from "react";
+import ResultCard from "../Cards/ResultCard";
 
 const Search = () => {
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   const onChangeHandler = (e) => {
     e.preventDefault();
@@ -21,11 +26,17 @@ const Search = () => {
       });
   };
   return (
-    <div className="add-page">
+    <div className="movie-page">
       <div className="container">
         <div className="add-content">
           <div className="input-wrapper">
-            <input type="text" placeholder="Search for a movie" value={query} onChange={onChangeHandler} />
+            <input
+              type="text"
+              placeholder="Search for a movie"
+              value={query}
+              onChange={onChangeHandler}
+              ref={inputRef}
+            />
           </div>
           {searchResults.length > 0 ? (
             <ul className="results">
