@@ -23,7 +23,7 @@ export const GlobalProvider = (props) => {
   // actions
   const addMovieToWatchlist = (movie) => {
     dispatch({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie });
-  };
+  }; //tells the reducer how to store that state
 
   const removeMovieFromWatchlist = (id) => {
     dispatch({ type: "REMOVE_MOVIE_FROM_WATCHLIST", payload: id });
@@ -48,7 +48,7 @@ export const GlobalProvider = (props) => {
   return (
     <GlobalContext.Provider
       value={{
-        watchlist: state.watchlist,
+        watchlist: state.watchlist, //returns watched and WL from the state
         watched: state.watched,
         addMovieToWatchlist,
         removeMovieFromWatchlist,

@@ -1,5 +1,5 @@
 export const AppReducer = (state, action) => {
-  switch (action.type) {
+  switch (action.type) { //actions tell the reducer how to change the state
     case "ADD_MOVIE_TO_WATCHLIST":
       return {
         ...state,
@@ -27,11 +27,7 @@ export const AppReducer = (state, action) => {
         ...state,
         watched: state.watched.filter((movie) => movie.id !== action.payload),
       };
-    // case "RATE_WATCHED":
-    //   return {
-    //     ...state,
-    //     watched: state.watched.filter((movie) => movie.id !== action.payload),
-    //   };
+
     default:
       return state;
   }

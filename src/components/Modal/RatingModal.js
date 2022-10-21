@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader, Button } from "reactstrap";
-import { GlobalContext } from "../components/context/GlobalContext";
-import StarRating from "../components/Rating/StarRating";
+import { GlobalContext } from "../context/GlobalContext";
+import StarRating from "../Rating/StarRating";
 
 const RatingModal = () => {
   const { modalProps, setModalProps, addMovieToWatched } = useContext(GlobalContext);
