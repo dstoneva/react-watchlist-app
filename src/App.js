@@ -6,14 +6,12 @@ import Watchlist from "./components/pages/Watchlist";
 import Watched from "./components/pages/Watched";
 import Search from "./components/pages/Search";
 import { GlobalProvider } from "./components/context/GlobalContext";
-import RatingModal from "./Modal/RatingModal"
-
+import RatingModal from "./components/Modal/RatingModal";
 
 function App() {
-
   return (
     <GlobalProvider>
-      <RatingModal/>
+      <RatingModal />
       <BrowserRouter>
         <Header />
         <Routes>

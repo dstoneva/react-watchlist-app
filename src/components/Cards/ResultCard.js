@@ -3,9 +3,10 @@ import { Card, CardBody, CardTitle, CardSubtitle, Button, CardText } from "react
 import { GlobalContext } from "../context/GlobalContext";
 
 const ResultCard = ({ movie }) => {
-  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
+  const { addMovieToWatchlist, watchlist, watched } = useContext(GlobalContext);
   let addedMovie = watchlist.find((anyMovie) => anyMovie.id === movie.id); //check if moive is already added to the watchlist
-  const addDisabled = addedMovie ? true : false;
+  let watchedMovie = watched.find((anyMovie) => anyMovie.id === movie.id)
+  const addDisabled = addedMovie || watchedMovie ? true : false;
 
   return (
     <div className="movie-card">
